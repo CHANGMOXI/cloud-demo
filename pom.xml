@@ -41,6 +41,19 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--Eureka换成Nacos
+                1、父工程添加 spring-cloud-alibaba-dependencies 管理版本 依赖
+                2、各个服务(order-service、user-service) 注释掉原本的Eureka客户端依赖，换成Nacos客户端依赖，用于Nacos服务注册和发现
+                    2.1、各个服务(order-service、user-service)配置文件注释掉Eureka的服务地址，添加Nacos服务地址
+            -->
+            <!--Nacos的管理版本 依赖-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.2.5.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <!-- mysql驱动 -->
             <dependency>
                 <groupId>mysql</groupId>
