@@ -13,6 +13,7 @@ spring:
       server-addr: 43.138.236.83:8848 # Nacos服务地址，Eureka换成Nacos的话要配置这个，同时注释掉Eureka服务地址
       discovery:
         cluster-name: ShenZhen # orderservice服务的集群名称，这样调用其他服务时，会优先调用本地集群的服务，也就是 ShenZhen集群下的userservice服务
+        namespace: 2efdee67-965c-45d5-9976-7fbf8cc80432 # 命名空间，填ID，用于环境隔离，该命名空间代表dev环境，该命名空间的orderservice服务 无法调用 public命名空间的userservice服务
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
   configuration:
