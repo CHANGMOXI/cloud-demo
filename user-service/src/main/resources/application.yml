@@ -11,6 +11,8 @@ spring:
   cloud:
     nacos:
       server-addr: 43.138.236.83:8848 # Nacos服务地址，Eureka换成Nacos的话要配置这个，同时注释掉Eureka服务地址
+      discovery:
+        cluster-name: ShenZhen # userservice服务的集群名称，想要不同实例在不同集群，可以修改集群名称再启动一个实例
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
   configuration:

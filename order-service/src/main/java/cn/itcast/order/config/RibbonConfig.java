@@ -15,9 +15,9 @@ import org.springframework.context.annotation.Configuration;
  **/
 @Configuration
 public class RibbonConfig {
-    @Bean
-    public IRule rule() {
-        // 随机负载均衡规则
-        return new RandomRule();
-    }
+//    @Bean
+//    public IRule rule() {
+//        // 随机负载均衡规则
+//        return new RandomRule();
+//    }
 }

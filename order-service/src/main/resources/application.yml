@@ -11,6 +11,8 @@ spring:
   cloud:
     nacos:
       server-addr: 43.138.236.83:8848 # Nacos服务地址，Eureka换成Nacos的话要配置这个，同时注释掉Eureka服务地址
+      discovery:
+        cluster-name: ShenZhen # orderservice服务的集群名称，这样调用其他服务时，会优先调用本地集群的服务，也就是 ShenZhen集群下的userservice服务
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
   configuration:
@@ -30,7 +32,8 @@ logging:
 # 自定义调用某个服务遵循的负载均衡规则，格式: 服务名称:ribbon:NFLoadBalancerRuleClassName:自定义负载均衡规则类
 userservice:
   ribbon:
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule # 自定义负载均衡规则
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule # 自定义Ribbon负载均衡规则
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule # 想要从Nacos中优先调用本地集群的服务，要在这里设置成Nacos的负载均衡规则，同时配置文件和代码里配置的Ribbon负载均衡规则也要注释掉
 ribbon:
   eager-load:
     enabled: true # 开启 负载均衡器的饥饿加载
