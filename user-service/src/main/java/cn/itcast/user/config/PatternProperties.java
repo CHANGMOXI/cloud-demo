@@ -13,4 +13,6 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "pattern")// Nacos配置更新 --> 对于绑定到Bean的配置，使用@ConfigurationProperties注解绑定这种方式就会自动热更新，无需配置其他东西
 public class PatternProperties {
     private String dateformat;
+    private String envSharedValue;
+    private String name;
 }

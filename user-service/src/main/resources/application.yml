@@ -29,3 +29,8 @@ logging:
 #  client:
 #    service-url:
 #      defaultZone: http://127.0.0.1:10086/eureka # Eureka服务地址
+
+# Nacos多环境配置共享，微服务启动时，会从Nacos读取的配置文件: (1) [服务名称]-[spring.profile.active].yaml ---> 环境配置 (2) [服务名称].yaml ---> 默认配置，多环境共享
+# 环境配置、共享配置、本地配置 的同名配置优先级: 服务名称-profile.yaml > 服务名称.yaml > 本地配置
+pattern:
+  name: 本地环境local
