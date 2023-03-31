@@ -39,3 +39,9 @@ ribbon:
   eager-load:
     enabled: true # 开启 负载均衡器的饥饿加载
     clients: userservice # 指定 调用哪些服务(服务名称)的负载均衡器 开启饥饿加载，多个服务就用集合的格式
+# 基于配置文件自定义Feign日志级别
+#feign:
+#  client:
+#    config:
+#      default: # default全局生效，如果是服务名称就是局部生效
+#        loggerLevel: FULL
